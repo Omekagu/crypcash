@@ -1,34 +1,51 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 const TransactionComp = ({ image, title, onPress, time, amount }) => {
   return (
     <View
       style={{
+        height: 70,
+        borderWidth: 0.2,
+        borderColor: 'gray',
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
         margin: 5,
-        padding: 15,
+        padding: 10,
         textTransform: 'capitalize',
         backgroundColor: 'fff',
-        borderRadius: 3,
+        borderRadius: 10,
         elevation: 3,
         backgroundColor: '#fff',
+
+        ...Platform.select({
+          ios: {
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 6,
+          },
+          // Elevation property for Android
+          android: {
+            elevation: 8,
+          },
+        }),
       }}
       onPress={onPress}
     >
-      <Text
+      <Image
         style={{
-          marginRight: 10,
+          height: 40,
+          width: 40,
           padding: 2,
-          elevation: 1,
-          borderColor: 'black',
+          borderWidth: 1,
+          marginRight: 10,
+          borderRadius: 10,
           padding: 5,
         }}
-      >
-        {image}
-      </Text>
+        source={{ uri: { image } }}
+      />
       <View style={{ flex: 1 }}>
         <Text
           style={{

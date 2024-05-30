@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import Dashboard from '../user/Dashboard';
 import MoreStack from './MoreStack/MoreStack';
+import HomeStack from './HomeStacks/HomeStack';
 
 const Tab = createBottomTabNavigator();
 const HomeScreen = ({ navigation }) => {
@@ -30,7 +31,7 @@ const HomeScreen = ({ navigation }) => {
     >
       <Tab.Screen
         name="Dashboard"
-        component={Dashboard}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Dashboard',
           tabBarIcon: ({ color, size }) => (

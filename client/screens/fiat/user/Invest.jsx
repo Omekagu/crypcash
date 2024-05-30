@@ -5,7 +5,14 @@ import Header from '../../../component/Header';
 
 const Invest = () => {
   return (
-    <SafeAreaView style={{ alignItems: 'center', textAlign: 'center' }}>
+    <SafeAreaView
+      style={{
+        alignItems: 'center',
+        textAlign: 'center',
+        backgroundColor: '#fff',
+        height: '100%',
+      }}
+    >
       <Header headerTitle={'invest'} />
       <View style={{ alignItems: 'center' }}>
         <Text

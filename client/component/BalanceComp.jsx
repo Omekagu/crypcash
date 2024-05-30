@@ -1,5 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  Touchable,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const BalanceComp = ({ currency, balance, time, icon }) => {
   return (
@@ -14,7 +20,7 @@ const BalanceComp = ({ currency, balance, time, icon }) => {
         backgroundColor: 'fff',
       }}
     >
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, gap: 5 }}>
         <Text
           style={{
             fontSize: 14,
@@ -38,7 +44,7 @@ const BalanceComp = ({ currency, balance, time, icon }) => {
         <Text
           style={{
             fontSize: 12,
-            fontWeight: 200,
+            fontWeight: '300',
             color: '#000000',
             textTransform: 'capitalize',
           }}
@@ -46,13 +52,18 @@ const BalanceComp = ({ currency, balance, time, icon }) => {
           last updated: {time}
         </Text>
       </View>
-      <Text
-        style={{
-          fontWeight: 600,
-        }}
-      >
-        {icon}
-      </Text>
+
+      <TouchableOpacity>
+        <Text
+          style={{
+            fontWeight: 600,
+            borderWidth: 0.3,
+            padding: 5,
+          }}
+        >
+          {icon}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };

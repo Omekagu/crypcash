@@ -29,7 +29,7 @@ const MoreCompExt = ({ style, title, onpress, text, input, icon }) => {
           style={{
             fontSize: 15,
             fontWeight: 900,
-            color: '#399dbd',
+            color: '#007780',
             textTransform: 'capitalize',
           }}
         >

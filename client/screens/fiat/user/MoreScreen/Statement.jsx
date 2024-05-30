@@ -20,7 +20,7 @@ const Statement = () => {
       <MoreComp
         style={{ fontSize: 18 }}
         title={'spending report'}
-        image={<FontAwesome name="pie-chart" size={18} color="#399dbd" />}
+        image={<FontAwesome name="pie-chart" size={18} color="#007780" />}
       />
     </SafeAreaView>
   );

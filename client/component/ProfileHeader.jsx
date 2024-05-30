@@ -8,7 +8,7 @@ const ProfileHeader = ({ profileName, image }) => {
       style={{
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        marginVertical: 10,
+        // marginVertical: 10,
       }}
     >
       <Image
@@ -16,7 +16,11 @@ const ProfileHeader = ({ profileName, image }) => {
         source={require('../assets/profile.jpg')}
       />
       <Text
-        style={{ fontSize: 20, fontWeight: 500, textTransform: 'uppercase' }}
+        style={{
+          fontSize: 16,
+          fontWeight: 'bold',
+          textTransform: 'capitalize',
+        }}
       >
         {profileName}
       </Text>

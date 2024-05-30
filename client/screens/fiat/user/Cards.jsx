@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Cards = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: '#fff', height: '100%' }}>
       <Header headerTitle={'Cards'} />
       <View>
         <View>

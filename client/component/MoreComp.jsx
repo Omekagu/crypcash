@@ -11,9 +11,24 @@ const MoreComp = ({ image, title, onpress, text, style }) => {
           alignItems: 'center',
           justifyContent: 'space-between',
           margin: 5,
-          padding: 5,
+          marginHorizontal: 10,
+          padding: 10,
+          borderRadius: 10,
           textTransform: 'capitalize',
-          backgroundColor: 'fff',
+          backgroundColor: '#fff',
+
+          ...Platform.select({
+            ios: {
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 4 },
+              shadowOpacity: 0.1,
+              shadowRadius: 6,
+            },
+            // Elevation property for Android
+            android: {
+              elevation: 8,
+            },
+          }),
         }}
       >
         <Text
@@ -21,8 +36,8 @@ const MoreComp = ({ image, title, onpress, text, style }) => {
             marginRight: 10,
             padding: 2,
             elevation: 2,
-            backgroundColor: '#fff',
             padding: 5,
+            alignSelf: 'center',
           }}
         >
           {image}
@@ -31,9 +46,9 @@ const MoreComp = ({ image, title, onpress, text, style }) => {
           <Text
             style={[
               {
-                fontSize: 15,
-                fontWeight: 700,
-                color: '#399dbd',
+                fontSize: 13,
+                fontWeight: 'bold',
+                marginVertical: 5,
                 textTransform: 'capitalize',
               },
               style,
@@ -43,7 +58,7 @@ const MoreComp = ({ image, title, onpress, text, style }) => {
           </Text>
           <Text
             style={{
-              fontSize: 10,
+              fontSize: 13,
               fontWeight: 500,
               color: '#808080',
               textTransform: 'capitalize',

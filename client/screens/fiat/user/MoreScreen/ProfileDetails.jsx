@@ -25,13 +25,13 @@ const ProfileDetails = ({ navigation }) => {
         <MoreComp title={'@wiseking'} text={'username'} />
         <MoreComp
           title={'Omekagu chukwuebuka joseph'}
-          style={{ textTransform: 'uppercase', fontSize: 17 }}
+          style={{ textTransform: 'uppercase', fontSize: 12 }}
           text={'account name'}
         />
         <MoreComp
           title={'2b los angelos turkey'}
           text={'address'}
-          style={{ textTransform: 'uppercase', fontSize: 17 }}
+          style={{ textTransform: 'uppercase', fontSize: 12 }}
         />
 
         <MoreComp title={'+ 123-283722'} text={'Phone number'} />

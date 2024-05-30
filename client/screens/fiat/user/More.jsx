@@ -23,33 +23,33 @@ const More = ({ navigation }) => {
     navigate('getHelp');
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: '#fff', height: '100%' }}>
       <Header headerTitle={'more'} />
       <View>
         <MoreComp
           onpress={profile}
-          image={<Entypo name="user" size={24} color="black" />}
-          title={'Blockbank Dev'}
+          image={<Entypo name="user" size={20} color="black" />}
+          title={'cYFI Dev'}
           text={'Account details'}
         />
         <MoreComp
-          image={<Entypo name="megaphone" size={24} color="black" />}
-          title={'Get PLUTOcrypto'}
+          image={<Entypo name="megaphone" size={20} color="black" />}
+          title={'Get CYFI'}
         />
         <MoreComp
           onpress={statement}
-          image={<FontAwesome name="address-book-o" size={24} color="green" />}
+          image={<FontAwesome name="address-book-o" size={20} color="green" />}
           title={'Statements & reports'}
           text={'Download monthly statements'}
         />
         <MoreComp
-          image={<FontAwesome name="credit-card" size={24} color="blue" />}
+          image={<FontAwesome name="credit-card" size={20} color="blue" />}
           title={'Saved Cards'}
           text={'Manage connected cards'}
         />
         <MoreComp
           onpress={getHelp}
-          image={<Ionicons name="help-circle" size={24} color="red" />}
+          image={<Ionicons name="help-circle" size={20} color="red" />}
           title={'Get Help'}
           text={'Get support or send feedback'}
         />
@@ -57,7 +57,7 @@ const More = ({ navigation }) => {
           image={
             <MaterialCommunityIcons
               name="server-security"
-              size={24}
+              size={20}
               color="black"
             />
           }
@@ -65,7 +65,7 @@ const More = ({ navigation }) => {
           text={'Protect yourself from intruders'}
         />
         <MoreComp
-          image={<FontAwesome5 name="tags" size={24} color="green" />}
+          image={<FontAwesome5 name="tags" size={20} color="green" />}
           title={'Referrals'}
           text={'Earn money when your friends jion Blockbank'}
         />
@@ -73,7 +73,7 @@ const More = ({ navigation }) => {
           image={
             <MaterialCommunityIcons
               name="car-speed-limiter"
-              size={24}
+              size={20}
               color="blue"
             />
           }
@@ -82,7 +82,7 @@ const More = ({ navigation }) => {
         />
         <MoreComp
           // onpress={Legal}
-          image={<FontAwesome name="legal" size={24} color="black" />}
+          image={<FontAwesome name="legal" size={20} color="black" />}
           title={'Legal'}
           text={'About our contract with you'}
         />

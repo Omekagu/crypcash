@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Button from '../../component/Button';
+// import Button from '../../../component/Button';
 
 const ChooseBank = ({ navigation }) => {
   const { navigate } = navigation;

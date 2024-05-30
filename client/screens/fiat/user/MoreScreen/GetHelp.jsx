@@ -12,7 +12,7 @@ const GetHelp = () => {
       <MoreComp
         title={'call us'}
         text={'contact call center'}
-        image={<Feather name="phone-call" size={24} color="#008000" />}
+        image={<Feather name="phone-call" size={24} color="#007780" />}
       />
       <MoreComp
         title={'chat with us'}

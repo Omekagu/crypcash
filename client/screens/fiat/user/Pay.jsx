@@ -21,7 +21,7 @@ const Pay = () => {
     setInput(!input);
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: '#fff' }}>
       <StatusBar style="auto" />
       <View
         style={{
@@ -77,7 +77,7 @@ const Pay = () => {
             <View style={{ marginRight: 'auto' }}>
               <ListHeaderTitle title={'Beneficiary'} />
             </View>
-            <ListHeaderTitle style={{ color: '#008000' }} title={'View all'} />
+            <ListHeaderTitle style={{ color: '#007780' }} title={'View all'} />
           </View>
           <ScrollView horizontal={true}>
             <View
@@ -108,7 +108,7 @@ const Pay = () => {
               text={'send to any PLUTO account'}
             />
             <MoreComp
-              image={<FontAwesome name="send" size={24} color="#008000" />}
+              image={<FontAwesome name="send" size={24} color="#007780" />}
               title={'send money to bank account'}
               text={'send to a local bank account'}
             />
@@ -120,7 +120,7 @@ const Pay = () => {
             />
             <MoreComp
               image={
-                <FontAwesome5 name="money-bill-alt" size={24} color="#008000" />
+                <FontAwesome5 name="money-bill-alt" size={24} color="#007780" />
               }
               title={'pay a bill'}
               text={'airtime, data and utilities'}

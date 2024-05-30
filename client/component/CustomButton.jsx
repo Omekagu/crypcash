@@ -1,20 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, Text } from 'react-native';
 
-const CustomButton = ({ icon, text }) => {
+const CustomButton = ({ icon, text, onPress }) => {
   return (
-    <View
+    <Pressable
+      onPress={onPress}
       style={{
         flex: 1,
         flexDirection: 'row',
-        margin: 3,
+        margin: 10,
         textTransform: 'uppercase',
-        borderRadius: 2,
-        elevation: 4,
+        borderRadius: 20,
         backgroundColor: '#fff',
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
+        borderColor: 'gray',
+
+        ...Platform.select({
+          ios: {
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.12,
+            shadowRadius: 6,
+          },
+          // Elevation property for Android
+          android: {
+            elevation: 8,
+          },
+        }),
       }}
     >
       <Text style={{ textTransform: 'capitalize', marginRight: 5 }}>
@@ -25,10 +39,8 @@ const CustomButton = ({ icon, text }) => {
       >
         {text}
       </Text>
-    </View>
+    </Pressable>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default CustomButton;
