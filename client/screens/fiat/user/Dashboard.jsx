@@ -27,10 +27,10 @@ const Dashboard = ({ navigation }) => {
   async function getData() {
     const token = await AsyncStorage.getItem('token');
     axios
-      .post('http://192.168.106.64:8000/userData', { token: token })
+      .post('http://192.168.59.64:8000/userData', { token: token })
       .then((res) => {
-        console.log(res.data.data);
         setUserData(res.data.data);
+        console.log(userData);
       });
     console.log(token);
   }
@@ -57,6 +57,7 @@ const Dashboard = ({ navigation }) => {
             flexDirection: 'row',
             backgroundColor: transparent,
           }}
+          onTouchStart={() => setOpenModal(false)}
         >
           <View
             style={{
@@ -75,7 +76,6 @@ const Dashboard = ({ navigation }) => {
                 fontSize: 20,
                 textAlign: 'right',
               }}
-              onPress={() => setOpenModal(false)}
             >
               close
             </Text>
@@ -217,7 +217,7 @@ const Dashboard = ({ navigation }) => {
         >
           <ProfileContent
             image={<FontAwesome name="user-circle" size={40} color="black" />}
-            title={`Hi, ${userData.name}`}
+            title={`Hello, ${userData.name}.`}
             icon={<FontAwesome name="pie-chart" size={24} color="black" />}
           />
           <View style={{ flexDirection: 'row' }}>
@@ -288,7 +288,7 @@ const Dashboard = ({ navigation }) => {
             />
           </View>
         </View>
-        <View style={{ paddingTop: '95%' }}>
+        <View style={{ paddingTop: '90%', marginBottom: '-10%' }}>
           <FlatList
             data={TRANSACTION}
             renderItem={({ item }) => (

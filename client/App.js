@@ -16,6 +16,8 @@ import Dashboard from './screens/fiat/user/Dashboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import LoginScreeen from './screens/auth/LoginScreen';
 import HomeStack from './screens/fiat/navigation/HomeStacks/HomeStack';
+import HomeTab from './screens/fiat/navigation/HomeStacks/HomeStack';
+import CryptoDashboard from './screens/crypto/user/CryptoDashboard';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,31 +38,50 @@ export default function App() {
     }, 3000); // Adjust the delay time as needed
   }, []);
 
-  // const LoginNav = () => {
-  //   const Stack = createNativeStackNavigator();
-  //   <Stack.Navigator>
-
-  //     <Stack.Screen
-  //       options={{ headerShown: false }}
-  //       name="dashboard"
-  //       component={Dashboard}
-  //     />
-  //   </Stack.Navigator>;
-  // };
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="Loading">
-        {!isLogggedIn ? (
+        <>
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="cryptodashboard"
+            component={CryptoDashboard}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="signup"
+            component={SignupScreen}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="dashboard"
+            component={Dashboard}
+          />
+
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="login"
+            component={LoginScreeen}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="home"
+            component={HomeTab}
+          />
+
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="crypto"
+            component={HomescreenTab}
+          />
+        </>
+
+        {/* {!isLogggedIn ? (
           <>
             <Stack.Screen
               options={{ headerShown: false }}
               name="signup"
               component={SignupScreen}
-            />
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="login"
-              component={LoginScreeen}
             />
             <Stack.Screen
               options={{ headerShown: false }}
@@ -70,34 +91,24 @@ export default function App() {
           </>
         ) : (
           <>
-            {/* <Stack.Screen
+            <Stack.Screen
               options={{ headerShown: false }}
               name="login"
               component={LoginScreeen}
-            /> */}
+            />
             <Stack.Screen
               options={{ headerShown: false }}
               name="home"
-              component={HomeStack}
-            />
-            {/* <Stack.Screen
-              options={{ headerShown: false }}
-              name="choosebank"
-              component={ChooseBank}
+              component={HomeTab}
             />
 
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="fiat"
-              component={HomeScreen}
-            /> */}
             <Stack.Screen
               options={{ headerShown: false }}
               name="crypto"
               component={HomescreenTab}
             />
           </>
-        )}
+        )} */}
       </Stack.Navigator>
     </NavigationContainer>
   );

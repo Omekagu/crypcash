@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Platform, Image, StyleSheet, Text, View } from 'react-native';
 
 const TransactionComp = ({ image, title, onPress, time, amount }) => {
   return (

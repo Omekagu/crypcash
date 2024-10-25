@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, platform } from 'react-native';
 
 function UtilityComp({ icon, name }) {
   return (
@@ -15,18 +15,18 @@ function UtilityComp({ icon, name }) {
         borderRadius: 10,
         backgroundColor: '#fff',
 
-        ...Platform.select({
-          ios: {
-            shadowColor: '#000',
-            shadowOffset: { width: 0, height: 4 },
-            shadowOpacity: 0.1,
-            shadowRadius: 6,
-          },
-          // Elevation property for Android
-          android: {
-            elevation: 8,
-          },
-        }),
+        // ...Platform.select({
+        //   ios: {
+        //     shadowColor: '#000',
+        //     shadowOffset: { width: 0, height: 4 },
+        //     shadowOpacity: 0.1,
+        //     shadowRadius: 6,
+        //   },
+        //   // Elevation property for Android
+        //   android: {
+        //     elevation: 8,
+        //   },
+        // }),
       }}
     >
       <Text>{icon}</Text>

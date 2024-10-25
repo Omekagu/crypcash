@@ -1,34 +1,67 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Dashboard from '../../user/Dashboard';
-import LoginScreeen from '../../../auth/LoginScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Pay from '../../user/Pay';
+import Cards from '../../user/Cards';
+import Invest from '../../user/Invest';
+import More from '../../user/More';
+import UtilityOption from '../../user/PayStack/UtilityOption';
 
-const Stack = createNativeStackNavigator();
-const HomeStack = () => {
+const Tab = createBottomTabNavigator();
+const HomeTab = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        options={{ headerShown: false }}
-        name="login"
-        component={LoginScreeen}
-      />
-      <Stack.Screen
-        options={{ headerShown: false }}
+    <Tab.Navigator
+      screenOptions={{
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 30,
+          left: 20,
+          right: 20,
+          elevation: 0,
+          backgroundColor: '#ebebeb',
+          borderRadius: 29,
+          paddingTop: 10,
+          height: 90,
+        },
+      }}
+    >
+      <Tab.Screen
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Home',
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="home" color={'black'} size={'30'} />
+          ),
+        }}
         name="dashboard"
         component={Dashboard}
       />
-      {/* <Stack.Screen
-        options={{ headerShown: false }}
-        name="scheduledTransfer"
-        component={ScheduledTransfer}
+      <Tab.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="pay"
+        component={UtilityOption}
       />
-      <Stack.Screen
+      <Tab.Screen
         options={{ headerShown: false }}
-        name="transfer"
-        component={Transfer}
-      /> */}
-    </Stack.Navigator>
+        name="cards"
+        component={Cards}
+      />
+      <Tab.Screen
+        options={{ headerShown: false }}
+        name="invest"
+        component={Invest}
+      />
+      <Tab.Screen
+        options={{ headerShown: false }}
+        name="more"
+        component={More}
+      />
+    </Tab.Navigator>
   );
 };
 
-export default HomeStack;
+export default HomeTab;

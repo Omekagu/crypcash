@@ -58,6 +58,7 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const oldUser = await User.findOne({ email: email });
+  console.log(email, password);
 
   if (!oldUser) {
     return res.send({ data: 'User does not exist' });

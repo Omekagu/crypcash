@@ -1,9 +1,10 @@
 import React from 'react';
-import { Pressable, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { View, Pressable, Text, Platform } from 'react-native';
 
 const CustomButton = ({ icon, text, onPress }) => {
   return (
-    <Pressable
+    <TouchableOpacity
       onPress={onPress}
       style={{
         flex: 1,
@@ -39,7 +40,7 @@ const CustomButton = ({ icon, text, onPress }) => {
       >
         {text}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

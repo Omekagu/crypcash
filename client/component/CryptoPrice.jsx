@@ -1,9 +1,10 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { Text, View } from 'react-native';
 
 const CryptoPrice = ({ name, price, pChange, percentage, bgColor }) => {
   return (
-    <View
+    <TouchableOpacity
       style={{
         paddingHorizontal: 10,
         marginVertical: 10,
@@ -41,7 +42,7 @@ const CryptoPrice = ({ name, price, pChange, percentage, bgColor }) => {
       >
         <Text style={{ textAlign: 'center' }}>{percentage}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -39,9 +39,9 @@ const CryptoDashboard = () => {
               fontSize: 15,
               fontWeight: '900',
               marginLeft: 18,
-              backgroundColor: '#fff',
+              // backgroundColor: '#fff',
               padding: 1,
-              borderRadius: 50,
+              // borderRadius: 50,
             }}
           >
             19+
@@ -95,10 +95,10 @@ const CryptoDashboard = () => {
       </View> */}
       <View
         style={{
-          borderTopWidth: 0.4,
-          borderRightWidth: 0.4,
-          borderLeftWidth: 0.4,
-          borderRadius: 5,
+          borderTopWidth: 1.4,
+          // borderRightWidth: 0.4,
+          // borderLeftWidth: 0.4,
+          // borderTopRadius: 5,
           paddingBottom: 10,
           marginTop: 10,
         }}

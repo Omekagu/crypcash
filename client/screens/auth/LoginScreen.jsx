@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
 import MainCustomButton from '../../component/MainCustomButton';
@@ -18,10 +18,12 @@ const LoginScreeen = ({ navigation }) => {
       email,
       password,
     };
-    axios.post('http://192.168.106.64:8000/login', userData).then((res) => {
+    axios.post('http://192.168.59.64:8000/login', userData).then((res) => {
       console.log(res.data);
       if (res.data.status == 'ok') {
         alert('logged in successful');
+        // setEmail('');
+        // setPassword('');
         AsyncStorage.setItem('token', res.data.data);
         AsyncStorage.setItem('isLogggedIn', JSON.stringify(true));
         navigation.navigate('dashboard');
@@ -109,17 +111,17 @@ const styles = StyleSheet.create({
     height: 70,
     // borderWidth: 1,
     borderColor: 'gray',
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.2,
-        shadowRadius: 6,
-      },
-      // Elevation property for Android
-      android: {
-        elevation: 8,
-      },
-    }),
+    // ...Platform.select({
+    //   ios: {
+    //     shadowColor: '#000',
+    //     shadowOffset: { width: 0, height: 4 },
+    //     shadowOpacity: 0.2,
+    //     shadowRadius: 6,
+    //   },
+    //   // Elevation property for Android
+    //   android: {
+    //     elevation: 8,
+    //   },
+    // }),
   },
 });

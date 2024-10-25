@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const MoreComp = ({ image, title, onpress, text, style }) => {

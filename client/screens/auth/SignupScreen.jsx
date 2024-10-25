@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
-import CustomButton from '../../component/CustomButton';
+// import CustomButton from '../../component/CustomButton';
 import MainCustomButton from '../../component/MainCustomButton';
 
 const SignupScreen = ({ navigation }) => {
@@ -12,7 +12,7 @@ const SignupScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
 
-  // const { navigate } = navigation;
+  const { navigate } = navigation;
 
   const handleSubmit = () => {
     const userData = {
@@ -24,7 +24,7 @@ const SignupScreen = ({ navigation }) => {
     console.log(userData);
 
     axios
-      .post('http://192.168.106.64:8000/register', userData)
+      .post('http://192.168.162.64:8000/register', userData)
       .then((res) => {
         setEmail('');
         setName('');
