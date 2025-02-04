@@ -41,7 +41,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="Loading">
-        <>
+        {/* <>
           <Stack.Screen
             options={{ headerShown: false }}
             name="cryptodashboard"
@@ -74,15 +74,15 @@ export default function App() {
             name="crypto"
             component={HomescreenTab}
           />
-        </>
+        </> */}
 
-        {/* {!isLogggedIn ? (
+        {!isLogggedIn ? (
           <>
-            <Stack.Screen
+            {/* <Stack.Screen
               options={{ headerShown: false }}
               name="signup"
               component={SignupScreen}
-            />
+            /> */}
             <Stack.Screen
               options={{ headerShown: false }}
               name="dashboard"
@@ -108,7 +108,7 @@ export default function App() {
               component={HomescreenTab}
             />
           </>
-        )} */}
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

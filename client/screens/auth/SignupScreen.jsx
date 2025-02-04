@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
 // import CustomButton from '../../component/CustomButton';
 import MainCustomButton from '../../component/MainCustomButton';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const SignupScreen = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -43,15 +44,15 @@ const SignupScreen = ({ navigation }) => {
   };
 
   return (
-    <>
-      <SafeAreaView>
+    <SafeAreaView>
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, fontWeight: 300 }}>
-            Create An Account with{' '}
-            <Text style={{ fontWeight: 'bold' }}>PLUTO-BANK </Text>
+          <Text style={{ fontSize: 20, fontWeight: 500,textAlign:'center'  }}>
+            Create account{' '}
+            {/* <Text style={{ fontWeight: 'bold',fontSize: 15 }}>PLUTO-BANK </Text> */}
           </Text>
 
           <View style={styles.inputContainer}>
+  <KeyboardAwareScrollView>
             <TextInput
               placeholder="Fullname..."
               style={styles.textinput}
@@ -75,7 +76,20 @@ const SignupScreen = ({ navigation }) => {
               style={styles.textinput}
               value={password}
               onChangeText={setPassword}
-            />
+              />
+            <TextInput
+              placeholder="Password .."
+              style={styles.textinput}
+              value={password}
+              onChangeText={setPassword}
+              />
+            <TextInput
+              placeholder="Password .."
+              style={styles.textinput}
+              value={password}
+              onChangeText={setPassword}
+              />
+              </KeyboardAwareScrollView> 
 
             <Text
               style={{
@@ -83,18 +97,16 @@ const SignupScreen = ({ navigation }) => {
                 fontSize: 15,
                 fontWeight: 300,
               }}
-            >
+              >
               forgot password ?
             </Text>
           </View>
 
-          <View>
+          <View style={{marginBottom: 0}}>
             <MainCustomButton title="signup" onPress={handleSubmit} />
           </View>
         </View>
       </SafeAreaView>
-      <StatusBar style="auto" />
-    </>
   );
 };
 
